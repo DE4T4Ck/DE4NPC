@@ -1,0 +1,30 @@
+name: Build DE4SpawnNPC
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Projekt herunterladen
+        uses: actions/checkout@v4
+
+      - name: Java 21 installieren
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Plugin bauen
+        run: mvn --batch-mode clean package
+
+      - name: JAR bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: DE4SpawnNPC-0.1
+          path: target/DE4SpawnNPC-0.1.jar
+          if-no-files-found: error
