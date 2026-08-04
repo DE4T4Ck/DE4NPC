@@ -1,0 +1,16 @@
+name: DE4SpawnNPC
+version: '${project.version}'
+main: de.de4t4ck.de4spawnnpc.DE4SpawnNPC
+api-version: '1.21'
+description: Geschützte Spawn-NPCs, die Spielerbefehle ausführen
+author: DE4_T4CK
+softdepend: [DE4Core, DE4Market]
+commands:
+  de4npc:
+    description: Verwaltet Spawn-NPCs.
+    usage: /de4npc
+    permission: de4spawnnpc.admin
+permissions:
+  de4spawnnpc.admin:
+    description: Darf Spawn-NPCs erstellen und verwalten.
+    default: op

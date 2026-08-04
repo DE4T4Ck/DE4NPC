@@ -1,0 +1,2 @@
+# Die NPCs werden automatisch in plugins/DE4SpawnNPC/npcs.yml gespeichert.
+# Dort können profession und type geändert werden. Danach /de4npc reload verwenden.
